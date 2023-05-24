@@ -28,7 +28,11 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/_apps.tsx.0"
+    "src/app/_apps.tsx.0",
+    "src/app/dashboard/list/@modal/(..)Item/[itemId]/page.tsx",
+    "src/app/dashboard/list/@modal/(..)Item/[itemId]/Modal.tsx0",
+    ".next/types/app/api/auth/[auth0]/page.tsx",
+    "src/pages/api/auth/[...auth0].js"
   ],
   "exclude": ["node_modules"]
 }

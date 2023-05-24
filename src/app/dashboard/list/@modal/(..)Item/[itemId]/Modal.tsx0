@@ -1,0 +1,52 @@
+import React from 'react';
+import { Button } from 'react-bootstrap';
+
+const Modal = ({ children, isOpen, onClose }:
+    {
+        children: React.ReactNode;
+        isOpen: boolean;
+        onClose: () => void;
+    }
+) => {
+    if (!isOpen) {
+        return null;
+    }
+
+    return (
+        <div className="modal-overlay" onClick={onClose}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <Button onClick={onClose}>Close</Button>
+                {children}
+            </div>
+
+            <style jsx>{`
+        .modal-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.7);
+          z-index: 1000;
+        }
+
+        .modal-content {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          padding: 1rem;
+          overflow: auto;
+          z-index: 1001;
+        }
+      `}</style>
+        </div>
+    );
+};
+
+export default Modal;
